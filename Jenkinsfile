@@ -1,24 +1,12 @@
 pipeline {
-   agent any
-
-   stages {
-      stage('Build') {
-        steps {
-          echo 'Building...'
-           
-                     
-           echo "Running ${env.BUILD_ID} ${env.BUILD_DISPLAY_NAME} on ${env.NODE_NAME} and JOB ${env.JOB_NAME}"
-                   }
-   }
-   stage('Test') {
-     steps {
-        echo 'Testing pipeline...'
-     }
-   }
-   stage('Deploy') {
-     steps {
-       echo 'Deploying. app again..'
-     }
-   }
-  }
+    agent any
+    stages {
+stage('testing pipeline'){
+          steps{
+      echo 'test1'
+                sh 'mkdir from-jenkins'
+                sh 'touch from-jenkins/test.txt'
+                }
+        }
+}
 }
